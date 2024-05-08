@@ -1,11 +1,5 @@
-import React from "react";
-
-const Notification = () => {
-  return (
-    <div className="feedbackAlternativeContainer">
-      <p className="feedbackAlternativeText">No feedback yet</p>
-    </div>
-  );
+const Notification = ({ message }) => {
+  return <div className="notification">{message}</div>;
 };
 
 export default Notification;

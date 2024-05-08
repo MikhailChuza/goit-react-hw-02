@@ -1,26 +1,19 @@
-import React from "react";
+import css from "./Options.module.css";
 
-export const Options = ({
-  updateFeedback,
-  resetFeedback,
-  totalFeedbackCount,
-}) => {
+const Options = ({ updateFeedback, totalFeedback, resetFeedback }) => {
   return (
-    <div className="buttonsFeedbackContainer">
-      <button className="buttonFeedback" onClick={() => updateFeedback("good")}>
+    <div className="options">
+      <button onClick={() => updateFeedback("good")} className={css.btn}>
         Good
       </button>
-      <button
-        className="buttonFeedback"
-        onClick={() => updateFeedback("neutral")}
-      >
+      <button onClick={() => updateFeedback("neutral")} className={css.btn}>
         Neutral
       </button>
-      <button className="buttonFeedback" onClick={() => updateFeedback("bad")}>
+      <button onClick={() => updateFeedback("bad")} className={css.btn}>
         Bad
       </button>
-      {!!totalFeedbackCount && (
-        <button className="buttonFeedback" onClick={resetFeedback}>
+      {totalFeedback > 0 && (
+        <button onClick={resetFeedback} className={css.btn}>
           Reset
         </button>
       )}
